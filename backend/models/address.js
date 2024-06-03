@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 const addressSchema = new mongoose.Schema({
-    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    user_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
     title: String,
     address_line_1: String,
     address_line_2: String,
@@ -10,9 +13,12 @@ const addressSchema = new mongoose.Schema({
     postal_code: String,
     landmark: String,
     phone_number: String,
-    created_at: { type: Date, default: Date.now },
+    created_at: { 
+        type: Date, 
+        default: Date.now 
+    },
     deleted_at: Date
-});
+  });
 
 const Address = mongoose.model('Address', addressSchema);
 

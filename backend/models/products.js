@@ -5,10 +5,13 @@ const productSchema = new mongoose.Schema({
     description: String,
     summary: String,
     cover: String,
-    category_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
+    category_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Category'
+    },
     created_at: { type: Date, default: Date.now },
     deleted_at: Date
-});
+  });
 
 const Product = mongoose.model('Product', productSchema);
 
